@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Moe Real Estate | Dubai's Premier Property Broker</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ─── VARIABLES ────────────────────────────── */
+:root{
+  --gold:#b8962e;
+  --gold-light:#d4af5a;
+  --gold-pale:#f5ecd7;
+  --navy:#0d1b2a;
+  --white:#ffffff;
+  --cream:#fdfaf5;
+  --gray:#f4f4f4;
+  --text:#2c2c2c;
+  --muted:#7a7a7a;
+  --border:#e8dfc8;
+}
+
+/* ─── NAVIGATION ───────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(13,27,42,0.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(184,150,46,0.2);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:80px;
+}
+.nav-logo img{height:54px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{
+  font-family:'Jost',sans-serif;
+  font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.75);
+  transition:color 0.2s;
+  cursor:pointer;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{
+  background:var(--gold);color:var(--white);
+  padding:10px 24px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+  border:none;cursor:pointer;font-family:'Jost',sans-serif;font-weight:500;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--gold-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all 0.3s}
+
+/* ─── SECTIONS ─────────────────────────────── */
+.page-section{display:none;min-height:100vh;padding-top:80px}
+.page-section.active{display:block}
+
+/* ─── HERO ─────────────────────────────────── */
+#home{padding-top:0}
+.hero{
+  position:relative;height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(135deg, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.75) 50%, rgba(184,150,46,0.15) 100%),
+    url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1800&q=80') center/cover no-repeat;
+}
+.hero-content{
+  position:relative;z-index:1;text-align:center;
+  padding:0 5%;max-width:900px;
+  animation:fadeUp 1.2s ease forwards;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{
+  display:inline-block;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(184,150,46,0.5);
+  padding:8px 20px;margin-bottom:28px;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,7vw,82px);
+  font-weight:300;color:var(--white);
+  line-height:1.1;margin-bottom:24px;
+  letter-spacing:-1px;
+}
+.hero h1 span{color:var(--gold-light);font-style:italic}
+.hero-sub{
+  font-size:15px;color:rgba(255,255,255,0.65);
+  line-height:1.8;max-width:560px;margin:0 auto 40px;
+  font-weight:300;
+}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{
+  background:var(--gold);color:var(--white);
+  padding:16px 36px;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  font-family:'Jost',sans-serif;font-weight:500;
+  border:none;cursor:pointer;transition:all 0.3s;
+}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-secondary{
+  background:transparent;color:var(--white);
+  padding:15px 36px;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  font-family:'Jost',sans-serif;font-weight:500;
+  border:1px solid rgba(255,255,255,0.4);cursor:pointer;transition:all 0.3s;
+}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{
+  position:absolute;bottom:48px;left:0;right:0;
+  display:flex;justify-content:center;gap:60px;
+  flex-wrap:wrap;padding:0 5%;
+}
+.stat{text-align:center;color:rgba(255,255,255,0.85)}
+.stat-number{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:300;color:var(--gold-light);
+  display:block;line-height:1;
+}
+.stat-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px}
+
+/* ─── SECTION HEADERS ───────────────────────── */
+.section-header{text-align:center;margin-bottom:64px}
+.section-eyebrow{
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;display:block;
+}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,5vw,52px);font-weight:300;
+  color:var(--navy);line-height:1.2;
+}
+.section-title span{font-style:italic;color:var(--gold)}
+.section-line{
+  width:60px;height:1px;background:var(--gold);
+  margin:20px auto 0;
+}
+
+/* ─── ABOUT PAGE ────────────────────────────── */
+#about .about-hero{
+  background:linear-gradient(135deg, var(--navy) 60%, #162436 100%);
+  padding:100px 5% 80px;
+}
+.about-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.about-img-wrap{position:relative}
+.about-img-wrap img{
+  width:100%;height:520px;object-fit:cover;
+  filter:grayscale(10%) contrast(1.05);
+}
+.about-img-accent{
+  position:absolute;bottom:-24px;right:-24px;
+  width:200px;height:200px;
+  border:2px solid var(--gold);
+  z-index:-1;
+}
+.about-text-side{}
+.about-badge{
+  display:inline-block;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(184,150,46,0.4);
+  padding:6px 16px;margin-bottom:20px;
+}
+.about-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,5vw,54px);font-weight:300;
+  color:var(--white);line-height:1.1;margin-bottom:8px;
+}
+.about-title-text{
+  font-size:14px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:28px;font-weight:300;
+}
+.about-bio{
+  font-size:15px;color:rgba(255,255,255,0.7);
+  line-height:1.9;font-weight:300;margin-bottom:24px;
+}
+.about-divider{width:40px;height:1px;background:var(--gold);margin:24px 0}
+.about-credentials{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.credential{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(184,150,46,0.2);
+  padding:16px 20px;
+}
+.credential-icon{font-size:20px;margin-bottom:8px}
+.credential-label{
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:4px;
+}
+.credential-value{font-size:14px;color:var(--white);font-weight:300}
+.about-values{
+  max-width:1100px;margin:0 auto;
+  padding:80px 5%;
+}
+.values-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  margin-top:48px;
+}
+.value-card{
+  background:var(--cream);
+  border:1px solid var(--border);
+  padding:40px 32px;text-align:center;
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.value-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(184,150,46,0.12)}
+.value-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--gold-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin:0 auto 20px;
+}
+.value-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;color:var(--navy);margin-bottom:12px;
+}
+.value-text{font-size:14px;color:var(--muted);line-height:1.8}
+
+/* ─── SERVICES PAGE ─────────────────────────── */
+#services{background:var(--white)}
+.services-wrap{max-width:1100px;margin:0 auto;padding:80px 5%}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+  margin-top:48px;
+}
+.service-card{
+  background:var(--cream);padding:52px 36px;
+  border:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:all 0.4s;cursor:default;
+}
+.service-card::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform 0.4s;
+}
+.service-card:hover{background:var(--navy)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover .service-title,.service-card:hover .service-text{color:var(--white)}
+.service-card:hover .service-text{color:rgba(255,255,255,0.6)}
+.service-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:56px;font-weight:300;color:var(--gold-pale);
+  line-height:1;margin-bottom:20px;
+  transition:color 0.4s;
+}
+.service-card:hover .service-num{color:rgba(184,150,46,0.3)}
+.service-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:500;color:var(--navy);
+  margin-bottom:14px;transition:color 0.4s;
+}
+.service-text{
+  font-size:14px;color:var(--muted);line-height:1.8;
+  transition:color 0.4s;
+}
+.services-bottom{
+  margin-top:80px;
+  background:var(--navy);padding:64px 5%;text-align:center;
+}
+.services-bottom h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:300;color:var(--white);margin-bottom:16px;
+}
+.services-bottom p{
+  font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:32px;
+  max-width:500px;margin-left:auto;margin-right:auto;
+}
+
+/* ─── LISTINGS PAGE ─────────────────────────── */
+#listings{background:var(--cream)}
+.listings-wrap{max-width:1200px;margin:0 auto;padding:80px 5%}
+.listings-filter{
+  display:flex;gap:12px;flex-wrap:wrap;
+  margin-bottom:48px;justify-content:center;
+}
+.filter-btn{
+  padding:9px 22px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+  border:1px solid var(--border);background:var(--white);color:var(--muted);
+  cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;
+}
+.filter-btn:hover,.filter-btn.active{
+  background:var(--navy);color:var(--white);border-color:var(--navy);
+}
+.listings-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+}
+.listing-card{
+  background:var(--white);overflow:hidden;
+  border:1px solid var(--border);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.listing-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.1)}
+.listing-img{position:relative;overflow:hidden;height:240px}
+.listing-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.listing-card:hover .listing-img img{transform:scale(1.05)}
+.listing-badge{
+  position:absolute;top:16px;left:16px;
+  background:var(--gold);color:var(--white);
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 14px;
+}
+.listing-price{
+  position:absolute;bottom:16px;right:16px;
+  background:var(--navy);color:var(--white);
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;padding:8px 16px;
+}
+.listing-info{padding:24px}
+.listing-type{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;
+}
+.listing-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;color:var(--navy);
+  margin-bottom:6px;
+}
+.listing-location{
+  font-size:13px;color:var(--muted);margin-bottom:16px;
+  display:flex;align-items:center;gap:6px;
+}
+.listing-specs{
+  display:flex;gap:16px;padding-top:16px;
+  border-top:1px solid var(--border);
+}
+.spec{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px}
+
+/* ─── CONTACT PAGE ──────────────────────────── */
+#contact{background:var(--white)}
+.contact-wrap{max-width:1100px;margin:0 auto;padding:80px 5%}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.4fr;gap:60px;
+  margin-top:48px;
+}
+.contact-info-side{}
+.contact-card{
+  background:var(--navy);padding:40px;margin-bottom:20px;
+}
+.contact-card-title{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+}
+.contact-item{
+  display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;
+}
+.contact-item:last-child{margin-bottom:0}
+.contact-icon{
+  width:40px;height:40px;border:1px solid rgba(184,150,46,0.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:16px;flex-shrink:0;
+}
+.contact-item-label{
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-bottom:4px;
+}
+.contact-item-value{font-size:14px;color:var(--white);font-weight:300;line-height:1.6}
+.contact-item-value a{color:var(--gold-light);transition:color 0.2s}
+.contact-item-value a:hover{color:var(--gold)}
+.whatsapp-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#25D366;color:var(--white);
+  padding:16px;width:100%;
+  font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+  font-family:'Jost',sans-serif;font-weight:500;
+  border:none;cursor:pointer;transition:background 0.2s;margin-top:20px;
+}
+.whatsapp-btn:hover{background:#1ebe5d}
+.contact-form-side{}
+.form-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:300;color:var(--navy);margin-bottom:8px;
+}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:32px;line-height:1.7}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{margin-bottom:16px}
+.form-group label{
+  display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--navy);margin-bottom:8px;font-weight:500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;padding:14px 16px;
+  border:1px solid var(--border);
+  font-family:'Jost',sans-serif;font-size:14px;color:var(--text);
+  background:var(--cream);transition:border-color 0.2s;outline:none;
+  -webkit-appearance:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--gold);background:var(--white)}
+.form-group textarea{resize:vertical;min-height:120px;line-height:1.7}
+.form-group select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
+}
+.form-submit{
+  width:100%;background:var(--navy);color:var(--white);
+  padding:18px;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  font-family:'Jost',sans-serif;font-weight:500;
+  border:none;cursor:pointer;transition:all 0.3s;margin-top:8px;
+}
+.form-submit:hover{background:var(--gold)}
+.form-success{
+  display:none;text-align:center;padding:40px;
+  background:var(--gold-pale);border:1px solid var(--border);
+}
+.map-wrap{
+  margin-top:60px;
+  background:var(--navy);height:300px;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.4);font-size:14px;letter-spacing:1px;
+  border:1px solid rgba(184,150,46,0.15);
+}
+
+/* ─── FOOTER ────────────────────────────────── */
+footer{
+  background:var(--navy);padding:48px 5% 32px;
+  border-top:1px solid rgba(184,150,46,0.2);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:24px;
+}
+.footer-logo img{height:48px;object-fit:contain}
+.footer-copy{
+  font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;
+}
+.footer-links{display:flex;gap:24px}
+.footer-links a{
+  font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);transition:color 0.2s;cursor:pointer;
+}
+.footer-links a:hover{color:var(--gold)}
+
+/* ─── RESPONSIVE ────────────────────────────── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .about-inner{grid-template-columns:1fr;gap:40px}
+  .about-img-wrap img{height:360px}
+  .about-credentials{grid-template-columns:1fr 1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .listings-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  nav{padding:0 4%}
+  .hero-stats{gap:32px}
+  .values-grid,.services-grid,.listings-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;text-align:center}
+  .about-credentials{grid-template-columns:1fr}
+}
+
+/* ─── MOBILE NAV ────────────────────────────── */
+.mobile-nav{
+  display:none;
+  position:fixed;top:80px;left:0;right:0;bottom:0;
+  background:var(--navy);z-index:999;
+  flex-direction:column;align-items:center;justify-content:center;gap:32px;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-size:28px;font-family:'Cormorant Garamond',serif;font-weight:300;
+  color:rgba(255,255,255,0.8);letter-spacing:2px;cursor:pointer;
+}
+.mobile-nav a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─────────────────────────── -->
+<nav>
+  <div class="nav-logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAGAKADAAQAAAABAAAEAAAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/8AAEQgEAAYAAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMAAQEBAQEBAgEBAgMCAgIDBAMDAwMEBgQEBAQEBgcGBgYGBgYHBwcHBwcHBwgICAgICAkJCQkJCwsLCwsLCwsLC//bAEMBAgICAwMDBQMDBQsIBggLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLC//dAAQAYP/aAAwDAQACEQMRAD8A/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAClyelJRTTA//9D+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/R/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0v78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9P+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/U/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/1f78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9b+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/X/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0P78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9H+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/S/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0/78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9T+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/V/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9b+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiqWpXElpp891FjdHGzDPTIBIr4W/Y3/b3+G/7VWn/8I9dhdC8ZWqt9p0qV+JgnBltmP+sTuV++n8QxhjzVcZRp1YUakrSne3na3467G0KFScJVIq6jv5XPvaiiiukxCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//X/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAzNb/AOQNd4/54yf+gmv4U9K1bWNG8SLr3hm4mtb+xla4hnt2ZJYmjJO9WXldvXPav7r9WGdKuR6xP/I1/IH/AME2LJdW/bm8K6bfRrNbTrqcc8UgDJJGbaUMrKeCp6EHg1+fca0HXxGDoxdnJtX7XcVc+p4dqqnSxFRq9knb5M/UX9in/grBpHim4tPhV+1DcQ6dqbbYbXXjiO2uG6BbkcLE47SDEbd9p6/uHFLHPGs0LBlYAgg5BB6EGvwO/bd/4JH2V/DefFD9lKAQ3Chpbrw4TiOTuxtGb7jf9MWO09FK8Kfkz9in/gop8UP2Xr9PhL8Y4bvWPClpKbZreYEX+lspwyxiTDFVPWF8bf4SOh2wed4rLKiwecK8fs1N0/Xv+a69yK+W0MZB18vevWP+X9W7H9VFFcJ8Nvib4F+L3g+08e/DnUodV0q9XMU8JyMjqrA4ZHU8MrAMp4Iru6+5hOM4qUXdM+alFxbjJWYUUUVQgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//0P78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAKl+M2Mw9Y2/lX8k/wDwTEjj/wCG8fDeP4RqmP8AvxJX9bGof8eE/wD1zb+VfyPf8Ew5T/w3v4bHr/ao/wDIEtfD8Uv/AIUMu/x/+3QPpMl/3TF/4f0kf12V8Bftif8ABP8A+F/7UljL4m04R6B4zjjxBqsSfLPtHypdIMeYvYN99OxI+U/ftFfX4vCUcVSdGvFSi/6+/wAzwcPiKlGaqUpWaP5FfCHxE/al/wCCbfxml0XVbSSy85g11p85L6fqcKHAkjYcHj7siYdOjDGVP9IH7Ln7YHwj/at8Mtqfga5Nrq1oqm/0m5IF1bE98Dh4yfuyLwehw2QPSPjb8Bfhd+0N4Nk8D/FTTP1C0JLRSD5J7eQjHmQyD5kYeo4PQgjiv5ev+CedudH/AG/fDWl2UjLHBeajbZDEFo44pRhsYyDtBI6Zr4anHFZFjaWGhPnw9WVknvHVJ/n6PsnqfSTlRzLDzrSjy1YK7a2e/wDl8j+ueikHQUtfoR8qFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH//0f78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKK4L4mfFDwB8HPB134/+JmqwaPpFkuZbi4bAz2VR1Zj/AAqoLHsK/nc+Nf8AwVT8YfH744eGfhn8HDN4e8HSa7p0U0p+S91BDcxgiQg/uomH/LNTlgfmOPlryM1zvDYBJVXeb2it/wDgLz+6524LLq2JbcF7q3fT/hz+lXUP+PCf/rm38q/kQ/4Jfvv/AG+vDP11X/0nlr+u7UM/2fP/ANc3/lX8iX/BL6Nh+3v4Yb/sK/8ApPLXz/FX/Iwy7/H/AO3QPVyX/dcX/h/SR/XzRRRX2582FfyQ/sDAf8PDtC/7Cmq/+i56/rer+R/9gcH/AIeG6A3/AFE9V/8ARc9fE8Vf77l/+P8AWB9Fkn+74r/D+kj+t8dBS0g6Clr7Y+dCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//S/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKq3t7ZabZy6jqMyW9vAjSSyyMEREUZLMxwAAOSTwKGwLVfEX7XH7dvwh/ZQ0ptP1WQaz4pmTdbaNbOBLhhw87ciGP3ILN/Crc4/PP9sv8A4K1QWb3Xw5/ZWmSZxujuPErqGjXsRZq3DEf89nBX+6rfeHyb+yV/wTu+L37VGs/8LU+MFxd6N4ZvZTcyXl1l9Q1NnOS0fmZOG7zPnP8ACG618XmPE1StV+pZRHnqdZfZX6P1enrsfQYXKI04LE458sO3V/19/ofP/jXxf+1h/wAFH/ipW06O3n1q9jVobaAiO00y3Jwzkkssar0BkYu3bPSvmXw/8DtJ/Zq/bQ8J/CrQrp7iw0DxNpsMc74BxnzEOFACnbISQBwa/rs+Dvwf+F3wA8GR+A/hRpFvpGnx/M4RcyzSEczSyH55HPdsn0HQAV/Kb+1tpuJv+Co2pE9/jLb/wA7OvlM54dqZLgaVXFyc8VXlaSa91K700/G3l5nvZdmf1+vONOKhSprXzf9dftH9e1FJ3LdKWvuj5oKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//T/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAzNb/AOQNd4/54yf+gmv4U9K1bWNG8SLr3hm4mtb+xla4hnt2ZJYmjJO9WXldvXPav7r9WGdKuR6xP/I1/IH/AME2LJdW/bm8K6bfRrNbTrqcc8UgDJJGbaUMrKeCp6EHg1+fca0HXxGDoxdnJtX7XcVc+p4dqqnSxFRq9knb5M/UX9in/grBpHim4tPhV+1DcQ6dqbbYbXXjiO2uG6BbkcLE447SDEbd9p6/uHFLHPGs0LBlYAgg5BB6EGvwO/bd/4JH2V/DefFD9lKAQ3Chpbrw4TiOTuxtGb7jf9MWO09FK8Kfkz9in/gop8UP2Xr9PhL8Y4bvWPClpKbZreYEX+lspwyxiTDFVPWF8bf4SOh2wed4rLKiwecK8fs1N0/Xv+a69yK+W0MZB18vevWP+X9W7H9VFFcJ8Nvib4F+L3g+08e/DnUodV0q9XMU8JyMjqrA4ZHU8MrAMp4Iru6+5hOM4qUXdM+alFxbjJWYUUUVQgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Q/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAKl+M2Mw9Y2/lX8k/wDwTEjj/wCG8fDeP4RqmP8AvxJX9bGof8eE/wD1zb+VfyPf8Ew5T/w3v4bHr/ao/wDIEtfD8Uv/AIUMu/x/+3QPpMl/3TF/4f0kf12V8Bftif8ABP8A+F/7UljL4m04R6B4zjjxBqsSfLPtHypdIMeYvYN99OxI+U/ftFfX4vCUcVSdGvFSi/6+/wAzwcPiKlGaqUpWaP5FfCHxE/al/wCCbfxml0XVbSSy85g11p85L6fqcKHAkjYcHj7siYdOjDGVP9IH7Ln7YHwj/at8Mtqfga5Nrq1oqm/0m5IF1bE98Dh4yfuyLwehw2QPSPjb8Bfhd+0N4Nk8D/FTTP1C0JLRSD5J7eQjHmQyD5kYeo4PQgjiv5ev+CedudH/AG/fDWl2UjLHBeajbZDEFo44pRhsYyDtBI6Zr4anHFZFjaWGhPnw9WVknvHVJ/n6PsnqfSTlRzLDzrSjy1YK7a2e/wDl8j+ueikHQUtfoR8qFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH//1f78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKK4L4mfFDwB8HPB134/+JmqwaPpFkuZbi4bAz2VR1Zj/AAqoLHsK/nc+Nf8AwVT8YfH744eGfhn8HDN4e8HSa7p0U0p+S91BDcxgiQg/uomH/LNTlgfmOPlryM1zvDYBJVXeb2it/wDgLz+6524LLq2JbcF7q3fT/hz+lXUP+PCf/rm38q/kQ/4Jfvv/AG+vDP11X/0nlr+u7UM/2fP/ANc3/lX8iX/BL6Nh+3v4Yb/sK/8ApPLXz/FX/Iwy7/H/AO3QPVyX/dcX/h/SR/XzRRRX2582FfyQ/sDAf8PDtC/7Cmq/+i56/rer+R/9gcH/AIeG6A3/AFE9V/8ARc9fE8Vf77l/+P8AWB9Fkn+74r/D+kj+t8dBS0g6Clr7Y+dCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//W/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAzNb/AOQNd4/54yf+gmv4U9K1bWNG8SLr3hm4mtb+xla4hnt2ZJYmjJO9WXldvXPav7r9WGdKuR6xP/I1/IH/AME2LJdW/bm8K6bfRrNbTrqcc8UgDJJGbaUMrKeCp6EHg1+fca0HXxGDoxdnJtX7XcVc+p4dqqnSxFRq9knb5M/UX9in/grBpHim4tPhV+1DcQ6dqbbYbXXjiO2uG6BbkcLE447SDEbd9p6/uHFLHPGs0LBlYAgg5BB6EGvwO/bd/4JH2V/DefFD9lKAQ3Chpbrw4TiOTuxtGb7jf9MWO09FK8Kfkz9in/gop8UP2Xr9PhL8Y4bvWPClpKbZreYEX+lspwyxiTDFVPWF8bf4SOh2wed4rLKiwecK8fs1N0/Xv+a69yK+W0MZB18vevWP+X9W7H9VFFcJ8Nvib4F+L3g+08e/DnUodV0q9XMU8JyMjqrA4ZHU8MrAMp4Iru6+5hOM4qUXdM+alFxbjJWYUUUVQgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA" alt="Golden Moe Real Estate">
+  </div>
+  <div class="nav-links">
+    <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
+    <a onclick="showPage('about')" id="nav-about">About</a>
+    <a onclick="showPage('services')" id="nav-services">Services</a>
+    <a onclick="showPage('listings')" id="nav-listings">Listings</a>
+    <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="showPage('contact')">Get in Touch</button>
+  <div class="hamburger" onclick="toggleMobile()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a onclick="showPage('home');closeMobile()">Home</a>
+  <a onclick="showPage('about');closeMobile()">About</a>
+  <a onclick="showPage('services');closeMobile()">Services</a>
+  <a onclick="showPage('listings');closeMobile()">Listings</a>
+  <a onclick="showPage('contact');closeMobile()">Contact</a>
+</div>
+
+<!-- ─── HOME PAGE ──────────────────────────── -->
+<section class="page-section active" id="home">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Dubai's Premier Real Estate Broker</div>
+      <h1>Find Your <span>Dream</span><br>Property in Dubai</h1>
+      <p class="hero-sub">Expert guidance in Dubai's luxury real estate market. From iconic waterfront villas to prime commercial spaces — we deliver results.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="showPage('listings')">View Listings</button>
+        <button class="btn-secondary" onclick="showPage('contact')">Free Consultation</button>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-number">500+</span><div class="stat-label">Properties Sold</div></div>
+      <div class="stat"><span class="stat-number">12+</span><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><span class="stat-number">AED 2B+</span><div class="stat-label">Total Transactions</div></div>
+      <div class="stat"><span class="stat-number">98%</span><div class="stat-label">Client Satisfaction</div></div>
+    </div>
+  </div>
+
+  <!-- Featured Properties Strip -->
+  <div style="background:var(--cream);padding:80px 5%">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="section-header">
+        <span class="section-eyebrow">Featured Properties</span>
+        <h2 class="section-title">Handpicked <span>Listings</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+        <div class="listing-card">
+          <div class="listing-img">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Luxury Villa">
+            <div class="listing-badge">Featured</div>
+            <div class="listing-price">AED 8.5M</div>
+          </div>
+          <div class="listing-info">
+            <div class="listing-type">Villa • For Sale</div>
+            <div class="listing-name">Palm Jumeirah Villa</div>
+            <div class="listing-location">📍 Palm Jumeirah, Dubai</div>
+            <div class="listing-specs">
+              <span class="spec">🛏 5 Beds</span>
+              <span class="spec">🛁 6 Baths</span>
+              <span class="spec">📐 7,200 sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-img">
+            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Downtown Penthouse">
+            <div class="listing-badge">New</div>
+            <div class="listing-price">AED 4.2M</div>
+          </div>
+          <div class="listing-info">
+            <div class="listing-type">Penthouse • For Sale</div>
+            <div class="listing-name">Downtown Penthouse</div>
+            <div class="listing-location">📍 Downtown Dubai</div>
+            <div class="listing-specs">
+              <span class="spec">🛏 3 Beds</span>
+              <span class="spec">🛁 4 Baths</span>
+              <span class="spec">📐 3,800 sqft</span>
+            </div>
+          </div>
+        </div>
+        <div class="listing-card">
+          <div class="listing-img">
+            <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&q=80" alt="Marina Apartment">
+            <div class="listing-badge">Hot Deal</div>
+            <div class="listing-price">AED 1.8M</div>
+          </div>
+          <div class="listing-info">
+            <div class="listing-type">Apartment • For Sale</div>
+            <div class="listing-name">Marina View Apartment</div>
+            <div class="listing-location">📍 Dubai Marina</div>
+            <div class="listing-specs">
+              <span class="spec">🛏 2 Beds</span>
+              <span class="spec">🛁 2 Baths</span>
+              <span class="spec">📐 1,400 sqft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <button class="btn-primary" onclick="showPage('listings')">View All Listings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Choose Us -->
+  <div style="background:var(--navy);padding:80px 5%;text-align:center">
+    <div style="max-width:900px;margin:0 auto">
+      <span class="section-eyebrow" style="color:var(--gold)">Why Golden Moe</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;color:var(--white);margin:16px 0 48px">Your Trusted Partner in <span style="color:var(--gold-light);font-style:italic">Dubai Real Estate</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+        <div style="padding:32px 24px;border:1px solid rgba(184,150,46,0.2)">
+          <div style="font-size:32px;margin-bottom:16px">🏆</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);margin-bottom:10px">Proven Track Record</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8">500+ successful transactions across Dubai's most prestigious communities</div>
+        </div>
+        <div style="padding:32px 24px;border:1px solid rgba(184,150,46,0.2)">
+          <div style="font-size:32px;margin-bottom:16px">🔑</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);margin-bottom:10px">Exclusive Access</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8">Off-market listings and early access to premium properties before they go public</div>
+        </div>
+        <div style="padding:32px 24px;border:1px solid rgba(184,150,46,0.2)">
+          <div style="font-size:32px;margin-bottom:16px">🤝</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);margin-bottom:10px">Full Support</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8">End-to-end service from property search to handover, including legal and mortgage guidance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAGAKADAAQAAAABAAAEAAAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/8AAEQgEAAYAAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/bAEMAAQEBAQEBAgEBAgMCAgIDBAMDAwMEBgQEBAQEBgcGBgYGBgYHBwcHBwcHBwgICAgICAkJCQkJCwsLCwsLCwsLC//bAEMBAgICAwMDBQMDBQsIBggLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLC//dAAQAYP/aAAwDAQACEQMRAD8A/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAClyelJRTTA//9D+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/R/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/0v78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9P+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/U/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/1f78KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9b+/CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiqWpXElpp891FjdHGzDPTIBIr4W/Y3/b3+G/7VWn/8I9dhdC8ZWqt9p0qV+JgnBltmP+sTuV++n8QxhjzVcZRp1YUakrSne3na3467G0KFScJVIq6jv5XPvaiiiukxCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//X/vwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAzNb/AOQNd4/54yf+gmv4U9K1bWNG8SLr3hm4mtb+xla4hnt2ZJYmjJO9WXldvXPav7r9WGdKuR6xP/I1/IH/AME2LJdW/bm8K6bfRrNbTrqcc8UgDJJGbaUMrKeCp6EHg1+fca0HXxGDoxdnJtX7XcVc+p4dqqnSxFRq9knb5M/UX9in/grBpHim4tPhV+1DcQ6dqbbYbXXjiO2uG6BbkcLE447SDEbd9p6/uHFLHPGs0LBlYAgg5BB6EGvwO/bd/4JH2V/DefFD9lKAQ3Chpbrw4TiOTuxtGb7jf9MWO09FK8Kfkz9in/gop8UP2Xr9PhL8Y4bvWPClpKbZreYEX+lspwyxiTDFVPWF8bf4SOh2wed4rLKiwecK8fs1N0/Xv+a69yK+W0MZB18vevWP+X9W7H9VFFcJ8Nvib4F+L3g+08e/DnUodV0q9XMU8JyMjqrA4ZHU8MrAMp4Iru6+5hOM4qUXdM+alFxbjJWYUUUVQgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA" alt="Golden Moe Real Estate" style="height:40px;filter:brightness(10)"></div>
+      <div class="footer-copy">© 2026 Golden Moe Real Estate LLC SOC. All rights reserved.</div>
+      <div class="footer-links">
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('services')">Services</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ─── ABOUT PAGE ─────────────────────────── -->
+<section class="page-section" id="about">
+  <div class="about-hero">
+    <div class="about-inner" style="max-width:1100px;margin:0 auto">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Sein Myint Htun">
+        <div class="about-img-accent"></div>
+      </div>
+      <div class="about-text-side">
+        <div class="about-badge">Real Estate Broker · RERA Certified</div>
+        <h1 class="about-name">Sein Myint Htun</h1>
+        <div class="about-title-text">Founder · Golden Moe Real Estate LLC SOC</div>
+        <p class="about-bio">
+          With over a decade of experience navigating Dubai's dynamic property market, Sein Myint Htun has built a reputation for delivering exceptional results to clients across the globe. His deep understanding of the UAE real estate landscape, combined with a commitment to transparency and client satisfaction, makes him a trusted advisor for buyers, sellers, and investors alike.
+        </p>
+        <div class="about-divider"></div>
+        <p class="about-bio">
+          Whether you're searching for your forever home on Palm Jumeirah, a prime investment in Downtown Dubai, or a commercial space in Business Bay — Sein and his team provide the expertise and personal attention your transaction deserves.
+        </p>
+        <div class="about-credentials">
+          <div class="credential">
+            <div class="credential-label">Experience</div>
+            <div class="credential-value">12+ Years</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">Transactions</div>
+            <div class="credential-value">500+ Deals</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">License</div>
+            <div class="credential-value">RERA Certified</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">Languages</div>
+            <div class="credential-value">English, Arabic</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-values">
+    <div class="section-header">
+      <span class="section-eyebrow">Our Philosophy</span>
+      <h2 class="section-title">Built on <span>Values</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🏅</div>
+        <div class="value-title">Excellence</div>
+        <p class="value-text">We hold ourselves to the highest standards — from the properties we represent to the service we deliver at every step.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <div class="value-title">Trust</div>
+        <p class="value-text">Our clients trust us with their most significant financial decisions. We honour that trust with honesty and transparency always.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💡</div>
+        <div class="value-title">Expertise</div>
+        <p class="value-text">Deep market knowledge, data-driven insights, and years of experience ensure we guide our clients to the best possible outcomes.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="data:image/jpeg;base64,/9j/4AAQ..." alt="Golden Moe" style="height:40px;filter:brightness(10)"></div>
+      <div class="footer-copy">© 2026 Golden Moe Real Estate LLC SOC.</div>
+      <div class="footer-links">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('services')">Services</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ─── SERVICES PAGE ──────────────────────── -->
+<section class="page-section" id="services">
+  <div class="services-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">What We Offer</span>
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-title">Residential Sales</div>
+        <p class="service-text">Expert guidance buying or selling villas, apartments, and townhouses across Dubai's most sought-after communities.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-title">Luxury Properties</div>
+        <p class="service-text">Exclusive access to Dubai's ultra-premium segment — penthouses, waterfront estates, and landmark residences.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-title">Investment Advisory</div>
+        <p class="service-text">Strategic property investment advice tailored to your financial goals, risk profile, and preferred timeline.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-title">Off-Plan Properties</div>
+        <p class="service-text">Access to Dubai's most anticipated off-plan launches with flexible payment plans and developer incentives.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-title">Commercial Properties</div>
+        <p class="service-text">Office spaces, retail units, and commercial towers in Dubai's prime business districts — DIFC, Business Bay, and beyond.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-title">Property Management</div>
+        <p class="service-text">Full property management services including tenant sourcing, lease management, maintenance coordination, and rental income optimisation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="services-bottom">
+    <div style="max-width:1100px;margin:0 auto">
+      <h3>Not sure which service you need?</h3>
+      <p>Book a free 30-minute consultation and we'll walk you through your options — no obligation, no pressure.</p>
+      <button class="btn-primary" onclick="showPage('contact')">Book Free Consultation</button>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Golden Moe Real Estate LLC SOC.</div>
+      <div class="footer-links">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ─── LISTINGS PAGE ─────────────────────── -->
+<section class="page-section" id="listings">
+  <div class="listings-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">Available Now</span>
+      <h2 class="section-title">Property <span>Listings</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="listings-filter">
+      <button class="filter-btn active">All Properties</button>
+      <button class="filter-btn">For Sale</button>
+      <button class="filter-btn">For Rent</button>
+      <button class="filter-btn">Villa</button>
+      <button class="filter-btn">Apartment</button>
+      <button class="filter-btn">Commercial</button>
+    </div>
+    <div class="listings-grid">
+      <div class="listing-card">
+        <div class="listing-img">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Palm Villa">
+          <div class="listing-badge">For Sale</div>
+          <div class="listing-price">AED 8.5M</div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-type">Villa</div>
+          <div class="listing-name">Palm Jumeirah Villa</div>
+          <div class="listing-location">📍 Palm Jumeirah, Dubai</div>
+          <div class="listing-specs">
+            <span class="spec">🛏 5 Beds</span>
+            <span class="spec">🛁 6 Baths</span>
+            <span class="spec">📐 7,200 sqft</span>
+          </div>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Downtown Penthouse">
+          <div class="listing-badge">For Sale</div>
+          <div class="listing-price">AED 4.2M</div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-type">Penthouse</div>
+          <div class="listing-name">Downtown Penthouse</div>
+          <div class="listing-location">📍 Downtown Dubai</div>
+          <div class="listing-specs">
+            <span class="spec">🛏 3 Beds</span>
+            <span class="spec">🛁 4 Baths</span>
+            <span class="spec">📐 3,800 sqft</span>
+          </div>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">
+          <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&q=80" alt="Marina Apartment">
+          <div class="listing-badge">For Sale</div>
+          <div class="listing-price">AED 1.8M</div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-type">Apartment</div>
+          <div class="listing-name">Marina View Apartment</div>
+          <div class="listing-location">📍 Dubai Marina</div>
+          <div class="listing-specs">
+            <span class="spec">🛏 2 Beds</span>
+            <span class="spec">🛁 2 Baths</span>
+            <span class="spec">📐 1,400 sqft</span>
+          </div>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">
+          <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80" alt="Creek Apartment">
+          <div class="listing-badge">For Rent</div>
+          <div class="listing-price">AED 180K/yr</div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-type">Apartment</div>
+          <div class="listing-name">Creek Harbour Apartment</div>
+          <div class="listing-location">📍 Dubai Creek Harbour</div>
+          <div class="listing-specs">
+            <span class="spec">🛏 2 Beds</span>
+            <span class="spec">🛁 3 Baths</span>
+            <span class="spec">📐 1,650 sqft</span>
+          </div>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Emirates Hills Villa">
+          <div class="listing-badge">For Sale</div>
+          <div class="listing-price">AED 22M</div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-type">Villa</div>
+          <div class="listing-name">Emirates Hills Mansion</div>
+          <div class="listing-location">📍 Emirates Hills, Dubai</div>
+          <div class="listing-specs">
+            <span class="spec">🛏 7 Beds</span>
+            <span class="spec">🛁 8 Baths</span>
+            <span class="spec">📐 15,000 sqft</span>
+          </div>
+        </div>
+      </div>
+      <div class="listing-card">
+        <div class="listing-img">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Office Space">
+          <div class="listing-badge">Commercial</div>
+          <div class="listing-price">AED 3.1M</div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-type">Office</div>
+          <div class="listing-name">DIFC Office Space</div>
+          <div class="listing-location">📍 DIFC, Dubai</div>
+          <div class="listing-specs">
+            <span class="spec">📐 2,400 sqft</span>
+            <span class="spec">🏢 Grade A</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Looking for something specific? Let us find it for you.</p>
+      <button class="btn-primary" onclick="showPage('contact')">Request Property Search</button>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Golden Moe Real Estate LLC SOC.</div>
+      <div class="footer-links">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('services')">Services</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ─── CONTACT PAGE ──────────────────────── -->
+<section class="page-section" id="contact">
+  <div class="contact-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2 class="section-title">Let's Find Your <span>Perfect</span> Property</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info-side">
+        <div class="contact-card">
+          <div class="contact-card-title">Contact Information</div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value"><a href="tel:+971568383002">+971 56 838 3002</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value"><a href="mailto:goldenmoerealty@gmail.com">goldenmoerealty@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value">Dubai, United Arab Emirates</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-item-label">Office Hours</div>
+              <div class="contact-item-value">Mon – Fri: 9am – 6pm<br>Sat: 10am – 4pm</div>
+            </div>
+          </div>
+        </div>
+        <button class="whatsapp-btn" onclick="window.open('https://wa.me/971568383002?text=Hello, I would like to inquire about a property.')">
+          <span>💬</span> Chat on WhatsApp
+        </button>
+      </div>
+      <div class="contact-form-side">
+        <h3 class="form-title">Send an Enquiry</h3>
+        <p class="form-sub">Fill in the form and we'll get back to you within 24 hours with personalised property recommendations.</p>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Ahmad" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Al Mansouri" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+971 50 000 0000">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>I'm Looking To</label>
+            <select>
+              <option>Buy a property</option>
+              <option>Rent a property</option>
+              <option>Sell my property</option>
+              <option>Investment advice</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Budget Range (AED)</label>
+            <select>
+              <option>Under AED 1M</option>
+              <option>AED 1M – 3M</option>
+              <option>AED 3M – 7M</option>
+              <option>AED 7M – 15M</option>
+              <option>AED 15M+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your ideal property — location, type, size, any specific requirements..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:32px;margin-bottom:12px">✓</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);margin-bottom:8px">Message Sent!</div>
+          <div style="font-size:14px;color:var(--muted)">Thank you for reaching out. We'll be in touch within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <span>📍 Golden Moe Real Estate · Dubai, UAE</span>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Golden Moe Real Estate LLC SOC. All rights reserved.</div>
+      <div class="footer-links">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('services')">Services</a>
+        <a onclick="showPage('listings')">Listings</a>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleMobile() {
+  const nav = document.getElementById('mobileNav');
+  const ham = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  ham.classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
